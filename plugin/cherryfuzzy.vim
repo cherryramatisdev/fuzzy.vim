@@ -14,7 +14,7 @@ function! FilesTEdit(args) abort
 	exe 'tabe ' .. a:args
 endfunction
 
-command! -nargs=1 -bar -complete=customlist,picker#FilesPicker E call FilesEdit(<q-args>)
-command! -nargs=1 -bar -complete=customlist,picker#FilesPicker V call FilesVEdit(<q-args>)
-command! -nargs=1 -bar -complete=customlist,picker#FilesPicker S call FilesSEdit(<q-args>)
-command! -nargs=1 -bar -complete=customlist,picker#FilesPicker T call FilesTEdit(<q-args>)
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker E call FilesEdit(<q-args>)
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker V call FilesVEdit(<q-args>)
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker S call FilesSEdit(<q-args>)
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker T call FilesTEdit(<q-args>)
