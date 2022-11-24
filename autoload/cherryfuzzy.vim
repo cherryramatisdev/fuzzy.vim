@@ -12,8 +12,7 @@ function! cherryfuzzy#FilesPicker(A,L,P) abort
 
   let l:items = l:cmd->systemlist()
   if a:A->len() > 0
-    if exists('*haystack#filter')
-      echomsg "AQUI"
+    if g:loaded_haystack
       return haystack#filter(l:items, a:A)
     elseif exists('*matchfuzzy')
       return l:items->matchfuzzy(a:A)
