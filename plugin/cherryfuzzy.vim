@@ -1,20 +1,9 @@
-function! FilesEdit(args) abort
-	exe 'e ' .. a:args
+function! Edit(operator, args) abort
+	exe a:operator .. ' ' .. a:args
 endfunction
 
-function! FilesVEdit(args) abort
-	exe 'vs ' .. a:args
-endfunction
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker Edit call Edit('e', <q-args>)
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker Vedit call Edit('vs', <q-args>)
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker Sedit call Edit('sp', <q-args>)
+command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker Tedit call Edit('tabnew', <q-args>)
 
-function! FilesSEdit(args) abort
-	exe 'sp ' .. a:args
-endfunction
-
-function! FilesTEdit(args) abort
-	exe 'tabe ' .. a:args
-endfunction
-
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker E call FilesEdit(<q-args>)
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker V call FilesVEdit(<q-args>)
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker S call FilesSEdit(<q-args>)
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker T call FilesTEdit(<q-args>)
