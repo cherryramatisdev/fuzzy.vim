@@ -11,7 +11,10 @@ cabbrev find Edit
 cabbrev fin Edit
 cabbrev sfind Sedit
 cabbrev sfin Sedit
+cabbrev sf Sedit
 cabbrev vfind Vedit
 cabbrev vfin Vedit
+cabbrev vf Vedit
 cabbrev tfind Tedit
 cabbrev tfin Tedit
+cabbrev tf Tedit
