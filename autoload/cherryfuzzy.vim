@@ -1,20 +1,20 @@
-function! cherryfuzzy#FilesPicker(A,L,P) abort
-  if trim(system('git -C . rev-parse 2>/dev/null; echo $?')) != 0
-    if !executable('fd')
-      echoerr 'Please install fd for non git repositories'
-      return
-    endif
-
-    let l:cmd = 'fd . -t f'
-  else
-    let l:cmd = 'git ls-files'
+function! s:getFiles() abort
+  if trim(system('git -C . rev-parse 2>/dev/null; echo $?')) == 0
+    return systemlist('git ls-files')
   endif
 
-  let l:items = l:cmd->systemlist()
+  if executable('fd')
+    return systemlist('fd . -t f')
+  endif
+
+  return glob(getcwd() . '/**', 1, 1)
+endfunction
+
+function! cherryfuzzy#FilesPicker(A,L,P) abort
+  let l:items = s:getFiles()
+
   if a:A->len() > 0
-    if g:loaded_haystack
-      return haystack#filter(l:items, a:A)
-    elseif exists('*matchfuzzy')
+    if exists('*matchfuzzy')
       return l:items->matchfuzzy(a:A)
     else
       echoerr "We can't fuzzy complete this"
