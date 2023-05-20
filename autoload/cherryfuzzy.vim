@@ -1,6 +1,6 @@
 function! s:mapBinaryToCommand(binary) abort
   if a:binary == "fd"
-    return "fd . -t f"
+    return "fd . -t f -H"
   elseif a:binary == "git"
     return "git ls-files"
   else
