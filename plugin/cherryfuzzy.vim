@@ -1,5 +1,3 @@
-let g:cherryfuzzy_binary = v:nil
-
 function! Edit(operator, args) abort
 	exe a:operator .. ' ' .. a:args
 endfunction
