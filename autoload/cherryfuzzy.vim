@@ -14,7 +14,7 @@ function! s:runCmd(binary) abort
 endfunction
 
 function! s:getFiles() abort
-  if !exists('g:cherryfuzzy_binary')
+  if exists('g:cherryfuzzy_binary')
     return s:runCmd(g:cherryfuzzy_binary)
   endif
 
