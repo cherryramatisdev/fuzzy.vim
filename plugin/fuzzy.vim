@@ -2,10 +2,10 @@ function! Edit(operator, args) abort
 	exe a:operator .. ' ' .. a:args
 endfunction
 
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker Edit call Edit('e', <q-args>)
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker VEdit call Edit('vs', <q-args>)
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker SEdit call Edit('sp', <q-args>)
-command! -nargs=1 -bar -complete=customlist,cherryfuzzy#FilesPicker TEdit call Edit('tabnew', <q-args>)
+command! -nargs=1 -bar -complete=customlist,fuzzy#FilesPicker Edit call Edit('e', <q-args>)
+command! -nargs=1 -bar -complete=customlist,fuzzy#FilesPicker VEdit call Edit('vs', <q-args>)
+command! -nargs=1 -bar -complete=customlist,fuzzy#FilesPicker SEdit call Edit('sp', <q-args>)
+command! -nargs=1 -bar -complete=customlist,fuzzy#FilesPicker TEdit call Edit('tabnew', <q-args>)
 
 fun! s:decideWhichAbbrevTouse(identifier, cmd) abort
   if getcmdtype() ==# ':' && getcmdline() ==# a:identifier
