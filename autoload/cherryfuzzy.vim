@@ -14,8 +14,8 @@ function! s:runCmd(binary) abort
 endfunction
 
 function! s:getFiles() abort
-  if exists('g:cherryfuzzy_binary')
-    return s:runCmd(g:cherryfuzzy_binary)
+  if exists('g:fuzzy_binary')
+    return s:runCmd(g:fuzzy_binary)
   endif
 
   if trim(system('git -C . rev-parse 2>/dev/null; echo $?')) == 0
@@ -29,7 +29,7 @@ function! s:getFiles() abort
   return glob(getcwd() . '/**', 1, 1)
 endfunction
 
-function! cherryfuzzy#FilesPicker(A,L,P) abort
+function! fuzzy#FilesPicker(A,L,P) abort
   let l:items = s:getFiles()
 
   if a:A->len() > 0
