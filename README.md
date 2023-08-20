@@ -8,8 +8,8 @@ A sample installation example with [vim-plug](https://github.com/junegunn/vim-pl
 
 ```vim
 call plug#begin()
-  Plug 'cherryramatisdev/cherryfuzzy.vim'
-  let g:cherryfuzzy_binary = 'fd'
+  Plug 'cherryramatisdev/fuzzy.vim'
+  let g:fuzzy_binary = 'fd'
 call plug#end()
 ```
 
