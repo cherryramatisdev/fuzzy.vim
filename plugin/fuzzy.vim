@@ -17,6 +17,7 @@ endfun
 
 cabbrev <expr> find <SID>decideWhichAbbrevTouse('find', 'Edit')
 cabbrev <expr> fin <SID>decideWhichAbbrevTouse('fin', 'Edit')
+cabbrev <expr> fi <SID>decideWhichAbbrevTouse('fi', 'Edit')
 cabbrev <expr> sfind <SID>decideWhichAbbrevTouse('sfind', 'SEdit')
 cabbrev <expr> sfin <SID>decideWhichAbbrevTouse('sfin', 'SEdit')
 cabbrev <expr> sf <SID>decideWhichAbbrevTouse('sf', 'SEdit')
