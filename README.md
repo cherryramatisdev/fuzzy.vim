@@ -14,3 +14,28 @@ call plug#end()
 ```
 
 This will use `fd` binary for all the file search
+
+## Commands available
+
+- `Edit` : Offer fuzzy finding tabcompletion and edit with the `:e` command
+- `VEdit` : Offer fuzzy finding tabcompletion and edit with the `:vs` command
+- `SEdit` : Offer fuzzy finding tabcompletion and edit with the `:sp` command
+- `TEdit` : Offer fuzzy finding tabcompletion and edit with the `:tabnew` command
+
+## Command abbreviations available
+
+- `find` -> `Edit`
+- `fin` -> `Edit`
+- `fi` -> `Edit`
+
+- `sfind` -> `SEdit`
+- `sfin` -> `SEdit`
+- `sf` -> `SEdit`
+
+- `vfind` -> `VEdit`
+- `vfin` -> `VEdit`
+- `vf` -> `VEdit`
+
+- `tfind` -> `TEdit`
+- `tfin` -> `TEdit`
+- `tf` -> `TEdit`
