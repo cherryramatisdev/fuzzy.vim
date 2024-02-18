@@ -15,6 +15,10 @@ call plug#end()
 
 This will use `fd` binary for all the file search
 
+## Demo
+
+https://github.com/cherryramatisdev/fuzzy.vim/assets/86631177/cacd14f5-47c5-4eeb-8595-c868b44f4088
+
 ## Commands available
 
 - `Edit` : Offer fuzzy finding tabcompletion and edit with the `:e` command
